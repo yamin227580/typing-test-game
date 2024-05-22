@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Typing Game Testing</title>
+    <style>
+      .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .typingText {
+        width: 500px;
+        height: 100px;
+        border: 1px solid green;
+        background-color: #e9c874;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 22px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        font-weight: bolder;
+      }
+      .inputText {
+        width: 500px;
+        height: 50px;
+        background-color: #e9c874;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 22px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        border: 0px;
+        font-size: 20px;
+        color: #453f78;
+        font-weight: bolder;
+        margin-top: 30px;
+        font-weight: bolder;
+      }
+      .noti {
+        margin-top: -30px;
+      }
+      .redColor {
+        color: #e72929;
+      }
+      .greenColor {
+        color: green;
+      }
+      .restart {
+        display: none;
+        width: 100px;
+        height: 50px;
+        margin-top: 60px;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 0px;
+        cursor: pointer;
+        background-color: #453f78;
+        color: white;
+      }
+      .restart:hover {
+        opacity: 0.7;
+      }
+      .incorrect_char {
+        color: red;
+        text-decoration: underline;
+      }
+
+      .correct_char {
+        color: green;
+      }
+      .err {
+        display: inline-block;
+      }
+      .error {
+        margin-left: 20px;
+        margin-bottom: 5px;
+      }
+      .integer {
+        font-size: 25px;
+        margin-left: 10px;
+      }
+      .errorAndTimeLeft {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .typeError {
+        color: red;
+        font-weight: bolder;
+      }
+      .countTime {
+        color: #90d26d;
+        font-weight: bolder;
+      }
+      .accuracy {
+        color: #ff9800;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="noti"></h1>
+      <div class="errorAndTimeLeft">
+        <div class="error">
+          <h2 class="err">Error:</h2>
+          <span class="integer typeError"></span>
+        </div>
+        <div class="error">
+          <h2 class="err">Time:</h2>
+          <span class="integer countTime"></span>
+        </div>
+        <div class="error">
+          <h2 class="err">Accuracy:</h2>
+          <span class="integer accuracy"></span>
+        </div>
+      </div>
+      <h2 class="typingText">Click below to start typing</h2>
+      <textarea
+        placeholder="start typing here....."
+        class="inputText"
+        oninput="checkText()"
+        onfocus="startGame()"
+      ></textarea>
+      <button class="restart">Restart</button>
+      <!-- <input type="text" class="textarea" onchange="checkText()" onfocus="startGame()" 
+		placeholder="start typing here....."> -->
+    </div>
+    <script src="typingGame.js"></script>
+  </body>
+</html>
